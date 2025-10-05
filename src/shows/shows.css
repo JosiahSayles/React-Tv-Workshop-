@@ -1,9 +1,14 @@
 .shows {
-  display: flex;
+  padding: 1ch;
+  width: 50%;
 }
-
-.show {
-  padding: 0 1ch;
+.shows ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
 }
 
 .show:not(:last-child) {
@@ -15,6 +20,11 @@
   cursor: pointer;
   text-decoration: underline;
 }
+.shows:hover,
+.shows.selected {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .show-details {
   display: grid;
@@ -23,6 +33,6 @@
 
 @media (width >= 500px) {
   .show-details {
-    grid-template-columns: minmax(30ch, auto) 1fr;
+    grid-template-columns: minmax(30ch, auto) 1fr 1fr;
   }
 }

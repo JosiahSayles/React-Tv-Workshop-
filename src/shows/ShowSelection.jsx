@@ -1,6 +1,23 @@
 import "./shows.css";
 
-/** A navbar that allows users to choose between a list of shows */
-export default function ShowSelection() {
-  return <nav className="shows"></nav>;
+export default function ShowSelection({
+  selectedShow,
+  shows,
+  setSelectedShow,
+}) {
+  return (
+    <nav className="shows">
+      <ul>
+        {shows.map((show) => (
+          <li
+            key={show.name}
+            onClick={() => setSelectedShow(show)}
+            className={show === selectedShow ? "selected" : ""}
+          >
+            {show.name}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 }
